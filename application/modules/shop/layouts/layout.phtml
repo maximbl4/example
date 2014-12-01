@@ -1,0 +1,62 @@
+﻿<?php echo $this->doctype();?>
+<html>
+<head>
+<?php echo $this->headTitle();?>
+<?php echo $this->headMeta();?>
+<?php echo $this->headLink();?>
+
+
+
+
+
+</head>
+
+<body class="s_layout_fixed">
+
+<div id="wrapper"> 
+  
+  <!-- ********************** --> 
+  <!--      H E A D E R       --> 
+  <!-- ********************** -->
+  
+  <!-- end of header --> 
+  <?php   echo $this->navigation()->menu(Zend_Registry::get('publicMenu'))->setPartial('partials/top.phtml');?>
+  
+  <!-- ********************** --> 
+  <!--      C O N T E N T     --> 
+  <!-- ********************** --> 
+  <div id="content" class="container_12">
+  
+    <div class="clear"></div>
+    <?php  echo $this->layout()->content; ?>
+      </div>
+    </div>
+
+  <!-- end of content --> 
+  <!-- ********************** --> 
+  <!--      F O O T E R       --> 
+  <!-- ********************** --> 
+  <div id="footer" class="container_12">
+    <div id="footer_categories" class="clearfix">
+<div class="clear"></div>
+      <div class="grid_12 border_eee"></div>
+    </div>
+    <div id="payments" class="right clearfix">
+      <img src="/images/payments/discover_straight_32px.png" alt="" />
+      <img src="/images/payments/american_express_straight_32px.png" alt="" />
+      <img src="/images/payments/moneybookers_straight_32px.png" alt="" />
+      <img src="/images/payments/paypal_straight_32px.png" alt="" />
+      <img src="/images/payments/visa_straight_32px.png" alt="" />
+      <img src="/images/payments/american_express_straight_32px.png" alt="" />
+    </div>
+    <p id="copy">&copy; Copyright 2011. Powered by <a class="blue" href="">Open Cart</a>.<br /> <a class="s_main_color" href="http://www.shoppica.net">Shoppica theme</a> made by <a href="http://www.themeburn.com">ThemeBurn.com</a></p>
+  </div>
+  <!-- end of FOOTER --> 
+  
+</div>
+
+<div id="fb-root"></div>
+
+
+</body>
+</html>

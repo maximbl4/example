@@ -1,0 +1,26 @@
+﻿<?php 
+    $acl = Zend_Registry::get('acl');
+    $identity = Zend_Auth::getInstance()->getStorage()->read();
+    if(!isset($identity->role)){
+        $role = 'guest';
+         } else { 
+         $role = $identity->role;
+    }
+?>
+         <?php foreach($this->container as $page): ?>
+         <?php if($acl->isAllowed($role, $page->resource, $page->privilege)):?>
+            <li> <a href="<?php echo $page->getHref();?>"><?php  echo $page->label?></a></li>
+            <?php else:?>
+         <?php $url = $this->url(array('controller' => 'auth' , 'action' => 'index', 'module' => 'admin'),'default');?>
+             <li> <a href="<?php echo $url;?>">Вход</a></li>
+             <?php break;?>
+             <?php endif;?>
+        <?php //endif;?>
+<?php endforeach; ?>
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+  </div>

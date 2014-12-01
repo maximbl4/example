@@ -1,0 +1,44 @@
+﻿
+  <div id="content" class="container_12">
+  
+    <div id="shopping_cart" class="grid_12">
+
+      
+        <table class="s_table_1" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <th width="400">Предложение</th>
+          </tr>
+          <?php foreach($this->alloffer as $order):?><tr><td></td></tr>
+          <tr>
+                <?php if($order['new'] == 1):?>
+                <?php $url = $this->url(array('controller' => 'index', 'action' => 'viewoneoffer', 'module' => 'admin', 'id' => $order['id']),'default');?>
+                <td><a href="<?php echo $url?>"><b>Предложение № <?php echo $order['id']?></b></a></td>
+                <?php else: ?>
+                <?php $url = $this->url(array('controller' => 'index', 'action' => 'viewoneoffer', 'module' => 'admin', 'id' => $order['id']),'default');?>
+                <td><a href="<?php echo $url?>">Заказ № <?php echo $order['id']?></a></td>
+                <?php endif?>
+          </tr>
+          <?php endforeach;?>
+          </table>
+          
+        <br />
+        <div class="clear"></div>
+        <br />
+        
+      </table>
+      
+        <br />
+        
+      
+      
+
+    </div>
+
+    <div class="clear"></div>
+    <br />
+    <br />
+    
+  </div>
+  <!-- end of content --> 
+  
+  

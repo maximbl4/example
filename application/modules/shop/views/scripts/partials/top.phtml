@@ -1,0 +1,25 @@
+﻿<div id="header" class="container_12">
+    <div class="grid_12">
+    <?php $url = $this->url(array('controller' => 'index', 'action' => 'index'), 'default');?>
+        <a id="site_logo" href="<?php echo $url?>">Shoppica store - Premium e-Commerce Theme</a> 
+            <div id="categories" class="s_nav">
+        <ul>
+        
+         <?php foreach($this->container as $page): ?>
+         <?php if($page->label == 'Корзина'):?>
+                        <div id="cart_menu" class="s_nav">
+                              	<a href="<?php echo $page->getHref();?>"><span class="s_icon"></span> <small class="s_text"><?php echo $page->label;?></small><span class="s_grand_total s_main_color"><?php echo $this->cart();?>шт</span></a>
+                        </div>
+
+<?php else:?>
+           <li> <a href="<?php echo $page->getHref();?>"><?php  echo $page->label?></a></li>
+           
+<?php endif;?>
+<?php endforeach; ?>
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+  </div>

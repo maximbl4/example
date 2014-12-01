@@ -1,0 +1,13 @@
+﻿<div id="special_home" class="grid_12">
+      <h2 class="s_title_1"><span class="s_main_color">Вся продукция</span></h2>
+      <div class="clear"></div>
+<?php foreach($this->products as $product):?>
+        <?php $url = $this->url(array('controller'=>'index', 'action' => 'viewone', 'id' => $product['id']), 'default');?>
+        <div class="s_item grid_2"> <a class="s_thumb" href="<?php echo $url?>"><img src="/images/<?php echo $product['small_image'];?>" title="Armani Acqua di Gioia" alt="Armani Acqua di Gioia" /></a>
+          <h3><a href="<?php echo $url?>"><?php echo $product['title'];?></a></h3>
+          <p class="s_model">Product 4</p>
+          <p><?php echo $product['price'];?><span class="s_currency s_before"> Р</span></p>
+          <?php $url = $this->url(array('controller'=>'cart', 'action' => 'add', 'id' => $product['id']), 'default');?>
+          <a class="s_button_add_to_cart" href="<?php echo $url;?>"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
+        </div>
+<?php endforeach;?>

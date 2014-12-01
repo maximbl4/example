@@ -1,0 +1,72 @@
+﻿
+  <!-- ********************** --> 
+  <!--      C O N T E N T     --> 
+  <!-- ********************** --> 
+  <div id="content" class="container_12">
+  
+    <div id="shopping_cart" class="grid_12">
+
+      
+        <table class="s_table_1" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <th width="200">Продукт</th>
+            <th width="200">Клиент</th>
+          </tr>
+          <tr><td><table class="s_table_1" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <th width="50">Название</th>
+            <th width="50">Описание</th>
+            <th width="50">Цена</th>
+            <th width="50">Количество</th>
+          </tr>
+          </table></td>
+          <td><table class="s_table_1" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <th width="50">Имя</th>
+            <th width="50">Фамилия</th>
+            <th width="50">Телефон</th>
+            <th width="50">Адресс</th>
+          </tr>
+          </table></td></tr>
+          <tr><td><table class="s_table_1" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <?php foreach($this->product as $product):?><tr>
+            <td width="25"><?php echo $product['title'];?></td>
+            <td width="25"><?php echo $product['discription'];?></td>
+            <td width="25"><?php echo $product['price'];?></td>
+            <td width="25"><?php echo $product['count'];?></td>
+            </tr>
+            <?php endforeach;?>
+          </table></td>
+          <td><table class="s_table_1" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+            <td width="25"><?php echo $this->client['fname'];?></td>
+            <td width="25"><?php echo $this->client['lname'];?></td>
+            <td width="25"><?php echo $this->client['phone'];?></td>
+            <td width="25"><?php echo $this->client['address'];?></td>
+            </tr></table></td></tr>
+          
+          </table>
+          
+        <br />
+        <div class="clear"></div>
+        <br />
+        <?php  $url = $this->url(array('controller' => 'index', 'action' => 'old', 'module' => 'admin' , 'id' => $this->id),'default');?>
+        <a class="s_button_1 s_main_color_bgr" href="<?php echo $url?>"><span class="s_text">Заказ отправлен</span></a>
+     
+      </table>
+      
+        <br />
+        
+      
+      
+
+    </div>
+
+    <div class="clear"></div>
+    <br />
+    <br />
+    
+  </div>
+  <!-- end of content --> 
+  
+  

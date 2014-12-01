@@ -1,0 +1,35 @@
+﻿
+  
+  <!-- ********************** --> 
+  <!--      C O N T E N T     -->
+  <!-- ********************** --> 
+  <div id="content" class="product_view container_12">
+
+    <div id="product" class="grid_12">
+      <div id="product_images" class="grid_4 alpha">
+      	<img id="image" src="/images/<?php echo $this->product['small_image']?>" title="Leica M7" alt="Leica M7" />
+      </div>
+      <div id="product_info" class="grid_4">
+        <dl class="clearfix">
+          <dt>Цена</dt>
+          <dd><?php echo $this->product['price']?></dd>
+          <dt>Модель</dt>
+          <dd><?php echo $this->product['title']?></dd>
+          <dt>Размеры</dt>
+          <dd>От XS до XXXL</dd>
+        </dl>
+      	<p class="s_short_desc"><?php echo $this->product['discription']?></p>
+       
+      </div>
+      <div class="grid_4 omega">
+      	<div class="suffix_2 left s_999">
+        </div>
+         <?php $url = $this->url(array('controller'=>'cart', 'action' => 'add', 'id' => $this-> product['id']), 'default');?>
+        <a id="add_to_cart" class="s_main_color_bgr" href="<?php echo $url?>" style="float: left;"><span class="s_text"><span class="s_icon"></span> Добавить в корзину</span></a></div>
+  </div>
+  <!-- end of content -->
+  
+  
+  
+  
+  
